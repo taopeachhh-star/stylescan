@@ -66,7 +66,7 @@ export function SpacingPanel({ spacing, onChange }: SpacingProps) {
                 onFocus={e => e.target.style.borderColor = 'var(--accent-1)'}
                 onBlur={e => { e.target.style.borderColor = 'var(--glass-border)'; updateToken(token.name, e.target.value); }}
               />
-              {token.edited && <span className="font-mono-custom text-[9px]" style={{color:'var(--accent-1)'}}>edited</span>}
+              {(token as SpacingToken & { edited?: boolean }).edited && <span className="font-mono-custom text-[9px]" style={{color:'var(--accent-1)'}}>edited</span>}
               <ConfidenceBadge confidence={token.confidence} />
             </div>
           </div>
